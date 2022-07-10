@@ -1,0 +1,175 @@
+
+body {
+  background: #000;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+  font-family: "Slabo 27px", serif;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+#pacman{
+  height: 100px;
+  width: 100px;
+  background-color: yellow;
+  position: absolute;
+}
+
+.pacman {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #F2D648;
+  position: relative;
+  margin-top: 20px;
+}
+.pacman__eye {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  top: 20px;
+  right: 40px;
+  background: #000000;
+}
+.pacman__mouth {
+  background: #000;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+          clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+  -webkit-animation-name: eat;
+          animation-name: eat;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+.pacman__food {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #FFF;
+  border-radius: 50%;
+  top: 40%;
+  left: 120px;
+  -webkit-animation-name: food;
+          animation-name: food;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.fantasma{
+    text-align: center;
+    background: #8e44ad;
+    color: white;
+    padding: .2rem .3rem 1rem .3rem;
+    position: absolute;
+    border-radius: 2rem 2rem 0 0;
+    animation-name: animar;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+/* Fantasma  */
+@keyframes animar{
+    0% {
+      left: 0;
+      top: 0;
+    }
+    10% {
+      left: 5rem;
+      top: 0rem;
+      color: #9b59b6;
+    }
+    30% {
+      top: 5rem;
+      left: 5rem;
+      color: white;
+    }
+    60%{
+      top: 5rem;
+      left: 0;
+      color: #9b59b6;
+    }
+    100% {
+      top: 0;
+      left: 0;
+    }
+  }
+
+@-webkit-keyframes eat {
+  0% {
+    -webkit-clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+            clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+  }
+  25% {
+    -webkit-clip-path: polygon(100% 60%, 44% 48%, 100% 40%);
+            clip-path: polygon(100% 60%, 44% 48%, 100% 40%);
+  }
+  50% {
+    -webkit-clip-path: polygon(100% 50%, 44% 48%, 100% 50%);
+            clip-path: polygon(100% 50%, 44% 48%, 100% 50%);
+  }
+  75% {
+    -webkit-clip-path: polygon(100% 59%, 44% 48%, 100% 35%);
+            clip-path: polygon(100% 59%, 44% 48%, 100% 35%);
+  }
+  100% {
+    -webkit-clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+            clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+  }
+}
+
+@keyframes eat {
+  0% {
+    -webkit-clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+            clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+  }
+  25% {
+    -webkit-clip-path: polygon(100% 60%, 44% 48%, 100% 40%);
+            clip-path: polygon(100% 60%, 44% 48%, 100% 40%);
+  }
+  50% {
+    -webkit-clip-path: polygon(100% 50%, 44% 48%, 100% 50%);
+            clip-path: polygon(100% 50%, 44% 48%, 100% 50%);
+  }
+  75% {
+    -webkit-clip-path: polygon(100% 59%, 44% 48%, 100% 35%);
+            clip-path: polygon(100% 59%, 44% 48%, 100% 35%);
+  }
+  100% {
+    -webkit-clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+            clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+  }
+}
+@-webkit-keyframes food {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+}
+@keyframes food {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+}
